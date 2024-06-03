@@ -1,6 +1,8 @@
 <template>
-  <input type="text" v-model="name" />
-  <h4>Name: {{ name }}</h4>
+  <div>
+    <p>{{ message }}</p>
+    <button @click="changeMessage">Ubah Pesan</button>
+  </div>
 </template>
 
 <script>
@@ -8,8 +10,13 @@ export default {
   name: "App",
   data() {
     return {
-      name: "",
-    };
+      message: 'Halo, Vue.js!',
+    }
   },
-};
+  methods: {
+    changeMessage() {
+      this.message = 'Pesan telah diubah!'
+    }
+  }
+}
 </script>
